@@ -1,0 +1,37 @@
+\section{PS2: Hexaflake}\label{sec:ps2}
+
+\subsection{Discussion}\label{sec:ps2:disc}
+
+The purpose of this assignment is to write a program that plots a hexaflake. A hexaflake has a base hexagon, and at each vertex of the base hexagon, a new hexagon is drawn so that through the first iteration, each hexagon is connected at three points: one vertex relates to the base hexagon and the other two vertices are connected on the hexagon to its left and right. Each new iteration draws a new wave of hexagons creating the hexaflake. The program takes two variables to excute, L and N. L is the length of the side of the base hexagon and N is the number of recursions.
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=7cm]{figures/ps2screenshot.png}
+	\caption{Window produced from running the Hexaflake program}\label{fig:ps2ss}
+\end{figure}
+
+
+\subsection{What I accomplished}\label{sec:ps2:accomplish}
+
+In my code, I used the Drawable interface from SFML library to display the hexaflake. I utilized recursive calls to draw the hexagons, which allowed me to draw them all in one function class. The first step of the program is to draw the base hexagon, and get the positions of the new hexagons after the base. In the hexaflake, each smaller hexagon is rotated by an angle of 60 degrees with respect to the previous one. This rotation ensures the hexagons are drawn to the screen in symmetry. My ‘hexagons’ member variable in my hexa class is a vector that stores the individual hexagons of the hexaflake. SFML drawing functions are also used to render the hexaflake on the window. Finally, my recursive algorithm generates the smaller hexagons around the center, base hexagon.
+
+\subsection{What I already knew}\label{sec:ps2:knew}
+
+I had a basic understanding of SFML from the previous project, and I was able to use that knowledge to draw the hexaflake. I also had a basic understanding of recursion from Computing 3, and I was able to use that knowledge to draw the hexaflake.
+
+\subsection{What I learned}\label{sec:ps2:learned}
+
+Through this project, I learned how to utilize recursive calls with SFML to display a pattern of hexagons onto the screen. I had practice creating a vector to store individual shapes in memory.
+
+\subsection{Challenges}\label{sec:ps2:challenges}
+
+One issue I had while making this program was that the base hexagon was not displaying. The center of the hexaflake was empty because the base case was not being reached where N == 0.
+
+\subsection{Codebase}\label{sec:ps2:code}
+
+\lstinputlisting[language=Make]{ps2/Makefile}
+\lstinputlisting{ps2/main.cpp}
+\lstinputlisting{ps2/hexa.hpp}
+\lstinputlisting{ps2/hexa.cpp}
+
+\newpage

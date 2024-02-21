@@ -1,0 +1,41 @@
+\section{PS3: N-Body Simulation}\label{sec:ps3}
+
+\subsection{Discussion}\label{sec:ps3:disc}
+
+The project aimed to develop a program that loads and exhibits a dynamic universe, parsing input from a text file with details on particles, including coordinates, velocity, mass, and image file paths.
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=9cm]{figures/ps3screenshot.png}
+	\caption{Window produced from running the tutorial code}\label{fig:ps3ss}
+\end{figure}
+
+
+\subsection{What I accomplished}\label{sec:ps3:accomplish}
+
+The code featured a Universe class encapsulating CelestialBody objects, with constructors for initialization. Utilizing SFML, the program employed the 'setUniverseScale' method to adjust celestial body sizes. Error handling for image loading and overloading operators like << and >> were implemented. An efficiency issue arose due to repeated assignments with dynamically allocated strings, prompting the realization that std::string handles memory automatically. This project built on PS3a, incorporating physics principles to update particle positions and velocities using Newton's laws. The 'updateVelocity' method calculated acceleration and updated velocity, addressing memory leaks.
+
+\subsection{What I already knew}\label{sec:ps3:knew}
+
+I already knew how to use SFML to create a window and display images. I also knew how to use the BOOST library for testing. I also knew how to use the std::vector library to store objects in memory.
+
+\subsection{What I learned}\label{sec:ps3:learned}
+
+What I learned from this project is how to represent physics simulation with the celestial bodies in my code, including how to represent mathematic equations properly. I also learned I learned that the ‘std::string’ class manages its memory automatically which is beneficial to me because it is automatic memory allocation. Each celestial body does not need to by dynamically allocated because its less efficient.
+
+\subsection{Challenges}\label{sec:ps3:challenges}
+
+An issue that I had when completing this project was efficiency management of memory for my image files. I had repeated assignments of objects with dynamically allocated strings which was resulting in unnecessary memory allocations and deallocations.
+
+\subsection{Codebase}\label{sec:ps3:code}
+
+\lstinputlisting[language=Make]{ps3/Makefile}
+\lstinputlisting{ps3/main.cpp}
+\lstinputlisting{ps3/CelestialBody.hpp}
+\lstinputlisting{ps3/CelestialBody.cpp}
+\lstinputlisting{ps3/Universe.hpp}
+\lstinputlisting{ps3/Universe.cpp}
+\lstinputlisting{ps3/test.cpp}
+
+
+\newpage

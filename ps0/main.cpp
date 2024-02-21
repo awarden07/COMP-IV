@@ -7,7 +7,7 @@ int main() {
     shape.setFillColor(sf::Color::Green);
 
     sf::Texture texture;
-    if (!texture.loadFromFile("ronaldo.png")) {
+    if (!texture.loadFromFile("sprite.png")) {
         return EXIT_FAILURE;
     }
 

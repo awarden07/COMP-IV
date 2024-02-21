@@ -1,0 +1,45 @@
+\section{PS1: LFSR/Photomagic}\label{sec:ps1}
+
+\subsection{Discussion}\label{sec:ps1:disc}
+
+This program simulates a Fibonacci linear feedback shift register. It reads three arguments: the source image filename, the output image filename, and the FibLFSR seed. The seed generates an encrypted string of bits by shifting the bits to the left and XOR-ing with specific tap bits. The program uses the Fibonacci LFSR to encrypt an image essentially by doing the equivalent of XORing each pixel of the image with the seed value. This was the first project that introduced testing.
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=12cm]{figures/original-decrypted.png}
+	\caption{This is the output of the program after the encryption.}\label{fig:ori-dec}
+\end{figure}
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=12cm]{figures/encrypted-original.png}
+	\caption{ This is the output of the program after the decryption.}\label{fig:en-ori}
+\end{figure}
+
+
+\subsection{What I accomplished}\label{sec:ps1:accomplish}
+
+Created a linear feedback shift register to encrypt and decrypt an image.
+
+\subsection{What I already knew}\label{sec:ps1:knew}
+Due to the previous project, I had been introduced to SFML and understood the basics of setting up a window. I also understood how to overload operators. In the context of this assignment, the << operator was used.
+
+\subsection{What I learned}\label{sec:ps1:learned}
+
+Adapting the Makefile from the previous project (which was given), was key in beginning to understand what the different components of the Makefile do, and how to use them. Working through this project taught me a lot, especially about the benefits of testing while coding. I realized that debugging is way easier when you test things as you go instead of trying to find and fix all the problems at the end. Using the BOOST library for tests was a new thing for me, and it was a good learning experience. Handling command-line arguments was something I had never done before, and this project was my first dive into it. Bit shifting and XORing weren't new concepts, but applying them to a bigger project was a first for me. Getting the hang of the XOR operator in C++ was crucial, especially in the context of photo encryption and decryption. The whole idea of shift registers and how bits convey info was clearer after this project.
+
+\subsection{Challenges}\label{sec:ps1:challenges}
+
+Originally, only the upper left quadrant of the source image was being encrypted, but it turned out the range did not span to the entire dimensions of the file. 
+
+\subsection{Codebase}\label{sec:ps1:code}
+
+\lstinputlisting[language=Make]{ps1/Makefile}
+\lstinputlisting{ps1/main.cpp}
+\lstinputlisting{ps1/FibLFSR.hpp}
+\lstinputlisting{ps1/FibLFSR.cpp}
+\lstinputlisting{ps1/PhotoMagic.hpp}
+\lstinputlisting{ps1/PhotoMagic.cpp}
+\lstinputlisting{ps1/test.cpp}
+
+\newpage

@@ -1,0 +1,40 @@
+\section{PS4: Sokoban}\label{sec:ps4}
+
+\subsection{Discussion}\label{sec:ps4:disc}
+
+Sokoban is a Japanese block pushing game where the goal is to get the crates into the marked areas on the screen. The game takes in a game level with is comprised of a matrix of characters which translate to game sprites. Win conditions should be detected, and the game should be resetable. 
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=10cm]{figures/ps4screenshot.png}
+	\caption{Sokoban Game after completion}
+	\label{fig:ps4ss}
+\end{figure}
+
+
+\subsection{What I accomplished}\label{sec:ps4:accomplish}
+
+Player movement is controlled by both the arrow keys and WASD and the player sprite changes depending on which direction the user faces the character. Players can move along with boxes as they push them. The iswon() condition checks if the user completes the level, and when it returns true, "You win" is displayed and victory music ensues. I stored the game matrix in a vector of vector of chars. Through this, each index of the vector is a vector of chars. This represents each row of the level. This makes it easy to represent the level as sprites.
+
+\subsection{What I already knew}\label{sec:ps4:knew}
+
+In class we reviewed creating our own Matrix data structure, but I opted for a preexisting c++ data structure in the 2 dimensional vector of chars, due to comfort in familiarity. The only other thing I knew coming into this project was the basics of SFML. I already knew how to create a window and read keystrokes from the keyboard thanks to previous
+projects.
+
+\subsection{What I learned}\label{sec:ps4:learned}
+
+In this project, a learned to create a game which includes a winning condition, reset key, and generates dynamic levels. I also learned how to move a sprite while being aware of other elements around it, which I image professional game developers have libraries to handle so they don't have to meticulously control movement.
+
+\subsection{Challenges}\label{sec:ps4:challenges}
+
+I used a project redo on Sokoban as in my original iteration of the project, I had trouble with detecting the win condition. iswon() function was failing because when a box gets stored, the value of '1' is assigned to the cell. However, when I was checking for stored boxes, I was comparing the cell with the integer 1. This caused the win condition to never hit.
+
+\subsection{Codebase}\label{sec:ps4:code}
+
+\lstinputlisting[language=Make]{ps4/Makefile}
+\lstinputlisting{ps4/main.cpp}
+\lstinputlisting{ps4/Sokoban.hpp}
+\lstinputlisting{ps4/Sokoban.cpp}
+
+
+\newpage

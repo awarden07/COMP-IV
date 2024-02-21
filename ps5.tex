@@ -1,0 +1,45 @@
+\section{PS5: DNA Sequence Alignment}\label{sec:ps5}
+
+\subsection{Discussion}\label{sec:ps5:disc}
+
+This assignment got us diving into dynamic programming and exploring the realm of computational biology. We had the option to team up for this project, and I went for it. The core task was to develop a program capable of computing and optimizing the optimal sequence alignment for two DNA strings. The key metric here was the edit distance, a measure of similarity between genetic sequences. The approach involved aligning the two strings side by side, creating a visual representation like the screenshot shared in the project details. We had the freedom to choose from different strategies to tackle this challenge, requiring us to decide on the most efficient approach for implementation.
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=15cm]{figures/ps5ss.png}
+	\caption{Resulting output on example file example10.txt}
+	\label{fig:ps5ss}
+\end{figure}
+
+
+\subsection{What I accomplished}\label{sec:ps5:accomplish}
+
+I accomplished making my first program using dynamic programming and successfully aligned the sequences using their edit distances.
+
+\subsection{What I already knew}\label{sec:ps5:knew}
+
+I had some experience using a two dimensional vector, at this point as we had used it previously. I also had some context on the biology part of this assignment due to coursework in the past, but very limited, however, enough for the relavancy of this project.
+
+\subsection{What I learned}\label{sec:ps5:learned}
+
+During this project, I got the hang of dynamic programming, a topic I'd seen in class but didn't fully get how to put into code. This assignment helped me understand how dynamic programming works practically in coding. It was a bit like unlocking a new level of coding where I could break down complex problems into smaller bits and save time by not redoing the same calculations over and over.
+
+We also had to use Valgrind, something I hadn't used much before. Valgrind is handy because it helps figure out if your program is using memory efficiently and if there are any memory leaks. It was my first go at it, and now I feel more comfortable using it, which is a good skill to have to make sure your program is running smoothly.
+
+This project also introduced me to pair programming. It's a simple idea – two heads are better than one. Having someone else to bounce ideas off of and share the workload made a real difference. I can see how this will be useful down the road.
+
+\subsection{Challenges}\label{sec:ps5:challenges}
+
+I faced a couple of challenges during this project. One of them was wrapping my head around the calculations explained in the readme. Specifically, figuring out how to calculate for the largest N was a bit puzzling. It took me some extra effort to grasp the problem fully.
+
+Another hurdle I encountered was while programming, particularly in formatting the output for the optimal edit distance. The tricky part was dealing with situations where the two strings weren't of the same length. This mismatch made creating the table awkward, and I struggled to find the correct format.
+
+\subsection{Codebase}\label{sec:ps5:code}
+
+\lstinputlisting[language=Make]{ps5/Makefile}
+\lstinputlisting{ps5/main.cpp}
+\lstinputlisting{ps5/EDistance.hpp}
+\lstinputlisting{ps5/EDistance.cpp}
+\lstinputlisting{ps5/test.cpp}
+
+\newpage

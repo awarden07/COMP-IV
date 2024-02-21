@@ -1,0 +1,47 @@
+\section{PS6: RandWriter}\label{sec:ps6}
+
+\subsection{Discussion}\label{sec:ps6:disc}
+
+In this project, our goal was to develop a Markov Model capable of analyzing a given k-gram or excerpt from a text and generating a new, coherent but distinct text. The process involves taking an input file from the user along with two numerical parameters representing the length of the string to modify and the order of each k-gram (the number of letters to start with). The generated text is then outputted.
+
+A crucial decision I made was to employ a nested map structured as map<string, map<char, int> >. This choice allowed me to effectively keep track of the k-grams and the characters following them. Additionally, it provided information on the frequency of each k-gram by summing up occurrences with different succeeding characters. The integer stored in the inner map represented how frequently the k-gram appeared with a specific character afterward, proving invaluable in my kRand function.
+
+Another strategic decision was to duplicate the original text into a private string variable. This duplication facilitated access to the text when needed, particularly in my freq(kgram, c) function, where I examined how many times the character 'c' appeared when the order was 0.
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=15cm]{figures/ps6ss.png}
+	\caption{Output after running the program with a text file}
+	\label{fig:ps6ss}
+\end{figure}
+
+\subsection{What I accomplished}\label{sec:ps6:accomplish}
+
+I developed a text generator implementing the Markov Model.
+
+\subsection{What I already knew}\label{sec:ps6:knew}
+I was familiar with the concept of maps, coming into this project, I knew that they consist of key-value pairs. While progressing through this project, I developed tests for the functions concurrently with their implementation. My prior experience with creating and utilizing tests proved beneficial, as it allowed me to debug the program incrementally during the writing process rather than addressing all issues at the end.
+
+\subsection{What I learned}\label{sec:ps6:learned}
+
+Through this project, I acquired the skill of working with nested maps. Prior to undertaking this task, my knowledge of nested maps and maps in general was limited. This project served as valuable practice for understanding the insertion and retrieval of items in maps. Additionally, it honed my proficiency in employing for-each loops, a skill that proved essential for the project. While C++ is not renowned for its random number generator, I learned how to utilize more robust random number generators effectively through this assignment. 
+
+\subsection{Challenges}\label{sec:ps6:challenges}
+I missed out on several key gradescope autograder test cases that I wasn't able to resolve as visible in Figure \ref{fig:ps6fail}. The main problems seem to lie in my freq function.
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=5cm]{figures/ps6fail.png}
+	\caption{Output after running the program with a text file}
+	\label{fig:ps6fail}
+\end{figure}
+
+\subsection{Codebase}\label{sec:ps6:code}
+
+\lstinputlisting[language=Make]{ps6/Makefile}
+\lstinputlisting{ps6/TextWriter.cpp}
+\lstinputlisting{ps6/RandWriter.hpp}
+\lstinputlisting{ps6/RandWriter.cpp}
+\lstinputlisting{ps6/test.cpp}
+
+\newpage

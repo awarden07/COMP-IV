@@ -1,0 +1,32 @@
+\section{PS7: Kronos Log Parsing}\label{sec:ps7}
+
+\subsection{Discussion}\label{sec:ps7:disc}
+
+The Kronos Log Parsing project heavily relies on the utilization of regular expressions, commonly known as regex. The primary objective of this project is to analyze a log file, which concurrently generates a report file (rpt file) with a distinctive format. The task involves parsing the entire log file to identify the start dates and times of boot-ups, recognize the corresponding end dates and times, and output these details to the reports. Additionally, the project requires reporting instances of boot failures to the rpt file, such as cases where a boot commenced but did not complete.
+
+\subsection{Output after parsing file ``device1\_intouch.log''}\label{sec:ps7:output}
+
+\lstinputlisting{ps7/device1_intouch.log.rpt}
+
+\subsection{What I accomplished}\label{sec:ps7:accomplish}
+
+First time involving regex in a project.
+
+\subsection{What I already knew}\label{sec:ps7:knew}
+
+I had experience parsing files in previous personal experience in internships, but never in C++ and not using regex which made for a new experience.
+
+\subsection{What I learned}\label{sec:ps7:learned}
+
+In tackling this project, a major learning point revolved around delving into regular expressions, understanding their purpose, and becoming adept at their practical application. Regular expressions emerged as a crucial tool for pattern matching, playing a significant role in my code. Specifically, I extensively employed regex search, a feature capable of identifying specific patterns within a string, going beyond mere terms. To put it simply, regex search excels at pinpointing substrings or subsequences within a given sequence.
+
+\subsection{Challenges}\label{sec:ps7:challenges}
+
+The main challenge of this project was understanding the use of regular expressions and adapting it to the purpose of this project.
+
+\subsection{Codebase}\label{sec:ps7:code}
+
+\lstinputlisting[language=Make]{ps7/Makefile}
+\lstinputlisting{ps7/main.cpp}
+
+\newpage
